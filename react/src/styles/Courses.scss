@@ -1,0 +1,13 @@
+#programs {
+  .courseImage {
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+  }
+  .fullWidthYouTube {
+    @media (min-width: 600px) {
+  	   margin: 30px 0;
+  	}
+    margin: 30px -32px 0 -32px;
+  }
+}

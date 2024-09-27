@@ -1,0 +1,96 @@
+name: Deploy Prod
+on:
+  push:
+    tags:
+      - '[0-9]+.[0-9]+.[0-9]+*'
+
+concurrency:
+    group: ${{ github.ref }}
+    cancel-in-progress: true
+
+permissions:
+  id-token: write # required to use OIDC authentication
+  contents: read
+
+env:
+  SDLC_ENV: prod
+
+jobs:
+  build-deploy:
+    runs-on: ubuntu-latest
+    steps:
+
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
+
+      - uses: hashicorp/setup-terraform@v2
+        with:
+            terraform_version: 1.6.3
+            terraform_wrapper: false
+
+      - name: Setup yarn
+        run: npm install -g yarn
+
+      - name: Assume AWS Role
+        uses: aws-actions/configure-aws-credentials@v1
+        with:
+          aws-region: 'us-west-2'
+          role-to-assume: 'arn:aws:iam::223651443348:role/handsoffate-deployment'
+          role-session-name: 'handsoffate-deployment'
+          role-duration-seconds: 3600
+          role-skip-session-tagging: true
+
+      - name: Terraform init
+        id: 'init'
+        run:  |
+          cd terraform && \
+          terraform init --upgrade
+
+      - name: Create Terraform Workspace
+        continue-on-error: true
+        run: |
+          cd terraform && \
+          terraform workspace new $SDLC_ENV
+
+      - name: Select Terraform Workspace
+        id: workspace
+        run: |
+          cd terraform && \
+          terraform workspace select $SDLC_ENV
+
+      - name: Terraform Apply
+        id: apply
+        run: |
+          cd terraform && \
+          terraform apply -auto-approve
+
+      - name: Terraform Output
+        run: |
+          cd terraform && \
+          echo "S3_BUCKET=$(terraform output s3_source_bucket)" >> $GITHUB_ENV && \
+          echo "CF_DIST_ID=$(terraform output cloudfront_distribution_id)" >> $GITHUB_ENV
+
+      - name: Install AWS CLI
+        id: install-aws-cli
+        uses: unfor19/install-aws-cli-action@v1.0.4
+        with:
+          arch: amd64
+
+      #- name: React Build
+      #  id: react-build
+      #  run: |
+      #    cd react && yarn && yarn run build
+
+      - name: Upload to S3 Bucket
+        id: upload-to-s3
+        run: |
+          cd react && \
+          aws s3 sync build s3://${{env.S3_BUCKET}} --delete
+      
+      - name: Clear Cloudfront Cache
+        id: clear-cloudfront-cache
+        run: | 
+          aws cloudfront create-invalidation --distribution-id ${{ env.CF_DIST_ID }} --paths "/*"

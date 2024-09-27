@@ -1,0 +1,10 @@
+#faqs {
+  a {
+    text-decoration: underline;
+    text-decoration-color: rgba(138, 168, 125, 0.4);
+    color: #8aa87d;
+    &:hover {
+      text-decoration-color: #8aa87d;
+    }
+  }
+}
