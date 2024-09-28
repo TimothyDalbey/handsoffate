@@ -79,10 +79,10 @@ jobs:
         with:
           arch: amd64
 
-      #- name: React Build
-      #  id: react-build
-      #  run: |
-      #    cd react && yarn && yarn run build
+      - name: React Build
+        id: react-build
+        run: |
+          cd react && yarn && yarn run build
 
       - name: Upload to S3 Bucket
         id: upload-to-s3
