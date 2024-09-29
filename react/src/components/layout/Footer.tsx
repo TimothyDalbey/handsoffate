@@ -39,7 +39,7 @@ function ResponsiveIcons () {
             component="button"
             disabled
             aria-disabled
-            href={data.social.facebookUrl}>
+          >
             <Facebook />
           </Link>
         </Grid>
@@ -48,7 +48,7 @@ function ResponsiveIcons () {
             component="button"
             disabled
             aria-disabled
-            href={data.social.twitterUrl}>
+          >
             <Twitter />
           </Link>
         </Grid>

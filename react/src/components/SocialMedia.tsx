@@ -35,7 +35,6 @@ function ResponsiveIcons () {
           component="button"
           disabled
           aria-disabled
-          href={data.social.facebookUrl}
         >
           <Facebook fill="#7e7e7e" width="30px" height="30px" />
         </Link>
@@ -45,7 +44,6 @@ function ResponsiveIcons () {
           component="button"
           disabled
           aria-disabled
-          href={data.social.twitterUrl}
         >
           <Twitter fill="#7e7e7e" width="30px" height="30px" />
         </Link>
