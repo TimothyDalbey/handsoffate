@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet'
 import Hero from './Hero'
 import Partners from './Partners'
+import Menu from './Menu'
 import MailingList from '../../MailingList'
 import SocialMedia from '../../SocialMedia'
 
@@ -12,6 +13,7 @@ function Home () {
       </Helmet>
       <Hero />
       <Partners />
+      <Menu />
       <SocialMedia />
       <MailingList />
     </div>

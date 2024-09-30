@@ -3,8 +3,6 @@ import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Typography from '@mui/material/Typography'
 import Link from '@mui/material/Link'
-
-import SlideIn from '../../utils/SlideIn'
 import puff from '../../../assets/puff.png'
 import grandcru from '../../../assets/grandcru.png'
 import bakery from '../../../assets/bakery.jpg'
@@ -51,7 +49,7 @@ function PartnerBlock (props: any) {
          }}></Box>
           )
       }
-      <Typography variant="h4">{props.title}</Typography>
+      { /* <Typography variant="h4">{props.title}</Typography> */ }
       <Typography
         variant="subtitle1"
         color="primary"
@@ -72,7 +70,6 @@ function PartnerBlock (props: any) {
 export default function Courses () {
   return (
     <Box id="partners" className="marginContainerTall creme" py={8}>
-      <SlideIn>
         <Container maxWidth="xl" disableGutters={true}>
           <Typography variant="h4" mb={4}>Partners</Typography>
           <Grid container spacing={4}>
@@ -87,7 +84,7 @@ export default function Courses () {
             <PartnerBlock
               title="Grand Cru"
               image={grandcru}
-              subtitle="Grand Cru's Commissary Kitchen"
+              subtitle="Let this team cook"
               body="Founded by chefs Patrick Miller and Alex Chong in 2012, Grand Cru's Commissary Kitchen provides Hands of Fate it's culinary backbone.  We've known these guys for more than a decade and we couldn't be more enthusiastic about leveraging their culinary excellence in the cafe."
               link="https://www.grandcruhospitality.com/"
               linkText="Grand Cru's Website"
@@ -103,7 +100,6 @@ export default function Courses () {
             />
           </Grid>
         </Container>
-      </SlideIn>
     </Box>
   )
 }
