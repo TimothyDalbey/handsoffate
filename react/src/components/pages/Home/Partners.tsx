@@ -85,7 +85,7 @@ export default function Courses () {
               title="Grand Cru"
               image={grandcru}
               subtitle="Let this team cook"
-              body="Founded by chefs Patrick Miller and Alex Chong in 2012, Grand Cru's Commissary Kitchen provides Hands of Fate it's culinary backbone.  We've known these guys for more than a decade and we couldn't be more enthusiastic about leveraging their culinary excellence in the cafe."
+              body="Founded by chefs Patrick Miller and Alex Chong in 2012, Grand Cru's commissary kitchen provides Hands of Fate it's culinary backbone.  We've known these guys for more than a decade and we couldn't be more enthusiastic about leveraging their culinary excellence in the cafe."
               link="https://www.grandcruhospitality.com/"
               linkText="Grand Cru's Website"
               imageAlign="top"
@@ -94,7 +94,7 @@ export default function Courses () {
               title="Bakery"
               image={bakery}
               subtitle="Bakery Announcement Coming Soon"
-              body="We're working on finding the perfect bakery to provide Hands of Fate excellent loaves and breakfast pastries daily.  We strongly believe that the right partner is one of the keys to our success, so we're being.  More to come soon."
+              body="We're working on finding the perfect bakery to provide Hands of Fate excellent loaves and breakfast pastries daily.  We strongly believe that the right bakery partner is one of the keys to our success, so we're being picky.  More to come soon."
               link=""
               linkText="Coming Soon"
             />

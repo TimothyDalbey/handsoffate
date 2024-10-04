@@ -13,7 +13,7 @@ export default function Hero () {
       <Grid container>
         <Grid item xs={12}>
           <Box sx={{
-            height: { xs: '55vh', md: '90vh' },
+            height: { xs: '25vh', sm: '90vh' },
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'center',

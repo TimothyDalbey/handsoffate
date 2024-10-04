@@ -9,7 +9,7 @@ import Divider from '@mui/material/Divider'
 import SlideIn from '../../utils/SlideIn'
 
 const MenuOptions = {
-  Lunch: [
+  'Forbidden Sandos': [
     'Beef Brisket, Pickled Red Onions,  Horseradish Creme on Country Wheat',
     'Smoked Turkey,  Brie, Cranberry Chutney on Challah',
     'Lemongrass Chicken Bahn Mi, Pickled Carrot and Cucumber on Dutch Crunch',
@@ -44,9 +44,9 @@ export default function Menu () {
           </Box>
           <Grid container spacing={4}>
             <Grid item xs={12} md={6}>
-                <Typography variant="h5" mb={2}>Lunch</Typography>
+                <Typography variant="h5" mb={2}>Forbidden Sandos</Typography>
                 <Box mb={2}><Divider/></Box>
-                { createMenuItems(MenuOptions.Lunch) }
+                { createMenuItems(MenuOptions['Forbidden Sandos']) }
             </Grid>
             <Grid item xs={12} md={6}>
                 <Typography variant="h5" mb={2}>Breakfast</Typography>
