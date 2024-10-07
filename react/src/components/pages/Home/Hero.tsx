@@ -12,33 +12,35 @@ export default function Hero () {
     <Box>
       <Grid container>
         <Grid item xs={12}>
-          <Box sx={{
-            height: { xs: '25vh', sm: '90vh' },
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center',
-            flexDirection: 'column',
-            backgroundImage: `url(${backgroundImage})`,
-            backgroundSize: 'cover',
-            backgroundPosition: 'centered'
-          }}>
+          <Box className="dimmedImage">
             <Box sx={{
-              width: '90%'
+              height: { xs: '25vh', sm: '90vh' },
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+              flexDirection: 'column',
+              backgroundImage: `url(${backgroundImage})`,
+              backgroundSize: 'cover',
+              backgroundPosition: 'centered'
             }}>
-              <AltText2
-                width="100%"
-                height="100%"
-                viewBox="0 0 3622 1298"
-                fill="#fff"
-              />
-              { /*
               <Box sx={{
-                width: '100%',
-                textAlign: 'center'
+                width: '90%'
               }}>
-                <Typography variant="h1" color="secondary">Coffee & Sandwiches</Typography>
+                <AltText2
+                  width="100%"
+                  height="100%"
+                  viewBox="0 0 3622 1298"
+                  fill="#fff"
+                />
+                { /*
+                <Box sx={{
+                  width: '100%',
+                  textAlign: 'center'
+                }}>
+                  <Typography variant="h1" color="secondary">Coffee & Sandwiches</Typography>
+                </Box>
+                */ }
               </Box>
-              */ }
             </Box>
           </Box>
         </Grid>

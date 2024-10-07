@@ -1,5 +1,6 @@
 import { Helmet } from 'react-helmet'
 import Hero from './Hero'
+import SubHero from './SubHero'
 import Partners from './Partners'
 import Menu from './Menu'
 import MailingList from '../../MailingList'
@@ -12,6 +13,7 @@ function Home () {
         <title>Coffee & Sandwiches - Lake Oswego, Oregon -  Hands of Fate Coffee & Sandwiches</title>
       </Helmet>
       <Hero />
+      <SubHero />
       <Partners />
       <Menu />
       <SocialMedia />
